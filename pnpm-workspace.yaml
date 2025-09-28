@@ -1,0 +1,14 @@
+onlyBuiltDependencies:
+  - '@tailwindcss/oxide'
+  - esbuild
+  - sharp
+  - unrs-resolver
+
+overrides:
+  react: $react
+  react-dom: $react-dom
+
+peerDependencyRules:
+  allowAny:
+    - react
+    - react-dom
