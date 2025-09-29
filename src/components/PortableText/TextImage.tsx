@@ -30,7 +30,7 @@ export function TextImage(props: PortableTextImageProps) {
 
     return (
       <figure
-        className="p-1 bg-background mx-auto group shadow-sm"
+        className="p-1 bg-card/80 mx-auto group shadow-sm"
         style={{ maxWidth: width }}
       >
         <Image
