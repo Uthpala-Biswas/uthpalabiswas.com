@@ -38,7 +38,7 @@ export function PostCard(
     >
       <article
         lang={language!}
-        className="overflow-hidden flex flex-col text-card-foreground rounded-lg group h-full duration-300 transition-all hover:shadow-sm pointer-coarse:shadow-sm break-inside-avoid-column mb-3 text-sm"
+        className="overflow-hidden border bg-card/55 flex flex-col text-card-foreground rounded-lg group h-full duration-300 transition-all hover:shadow-sm pointer-coarse:shadow-sm break-inside-avoid-column mb-3 text-sm"
       >
         {mainImage?.asset ? (
           <>
