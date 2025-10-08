@@ -6,7 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { sanityFetch } from "@/sanity/lib/live";
 import { SITE_SEETTINGS_QUERY } from "@/sanity/lib/queries";
-import SOCIAL_ICONS from "@/components/icons/SocialIcons";
+import { SocialIcon } from "@/components/icons/SocialIcons";
 
 export async function Footer() {
   const { data: siteSettings } = await sanityFetch({
@@ -49,9 +49,8 @@ export async function Footer() {
             {siteSettings.socialLinksIntro}
             <span className="inline-flex gap-2 justify-center flex-wrap items-center">
               {siteSettings.socialLinks?.map((link, i) => {
-                if (link.platform === null) return null;
-                if (link.url === null) return null;
-                const Icon = SOCIAL_ICONS[link.platform];
+                if (!link.platform) return null;
+                if (!link.url) return null;
                 return (
                   <Link
                     key={i}
@@ -60,7 +59,7 @@ export async function Footer() {
                     className="hover:text-sacred-800 relative bottom-[2px]"
                     rel="noreferrer noopener"
                   >
-                    <Icon />
+                    <SocialIcon platform={link.platform} />
                   </Link>
                 );
               })}

@@ -1,6 +1,6 @@
 import { defineField, defineType, defineArrayMember } from "sanity";
 import { ControlsIcon, LinkIcon } from "@sanity/icons";
-import ICONS from "@/components/icons/SocialIcons";
+import { ICONS } from "@/components/icons/SocialIcons";
 
 const PLATFORMS = [
   { title: "Facebook", value: "facebook" },

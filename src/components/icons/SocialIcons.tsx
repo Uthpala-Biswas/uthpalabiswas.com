@@ -111,7 +111,7 @@ export function GithubIcon() {
   );
 }
 
-const ICONS = {
+export const ICONS = {
   facebook: FacebookIcon,
   linkedin: LinkedInIcon,
   twitter: TwitterIcon,
@@ -121,4 +121,8 @@ const ICONS = {
   instagram: InstagramIcon,
 };
 
-export default ICONS;
+export function SocialIcon({ platform }: { platform: keyof typeof ICONS }) {
+  const icon = ICONS[platform];
+  if (!icon) return null;
+  return icon();
+}
