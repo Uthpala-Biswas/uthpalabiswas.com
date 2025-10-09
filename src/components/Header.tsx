@@ -24,6 +24,12 @@ export function Header({ color }: { color: string }) {
     >
       <div
         className={cn("sm:px-5 h-full flex items-center animated-header-bg")}
+        style={
+          {
+            "--homepage-header-bg":
+              pathname === "/" ? "transparent" : "var(--secondary)",
+          } as React.CSSProperties
+        }
       >
         <div className="flex items-center justify-between sm:justify-normal max-w-[1200px] mx-auto w-full">
           <Link
