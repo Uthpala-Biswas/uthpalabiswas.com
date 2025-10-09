@@ -17,7 +17,7 @@ export function SplitImage({
   orientation,
 }: SplitImageBlock) {
   return (
-    <div className="my-5 mx-3">
+    <div className="my-5 mx-3 relative z-1">
       <section
         className="shadow-sm border-oldvest/30 flex group bg-[#f9edec] flex-col sm:data-[orientation='imageLeft']:flex-row sm:data-[orientation='imageRight']:flex-row-reverse max-w-5xl gap-5 mx-auto p-5 text-right [&_*]:text-left"
         data-orientation={stegaClean(orientation) || "imageLeft"}

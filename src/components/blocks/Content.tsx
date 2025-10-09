@@ -10,7 +10,7 @@ type ContentBlock = Extract<HomepageBlocks, { _type: "content" }>;
 
 export function Content({ contentMatter }: ContentBlock) {
   return (
-    <section className="text-lg mx-auto my-5 sm:my-12 max-w-3xl px-4 sm:px-6 lg:px-8">
+    <section className="text-lg mx-auto my-5 sm:my-12 max-w-3xl px-4 sm:px-6 lg:px-8 relative z-1">
       {contentMatter && (
         <PortableText
           value={contentMatter}
