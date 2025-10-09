@@ -23,10 +23,7 @@ export function Header({ color }: { color: string }) {
       }
     >
       <div
-        className={cn(
-          "sm:px-5 h-full flex items-center",
-          pathname == "/" ? "animated-header-bg" : "bg-secondary",
-        )}
+        className={cn("sm:px-5 h-full flex items-center animated-header-bg")}
       >
         <div className="flex items-center justify-between sm:justify-normal max-w-[1200px] mx-auto w-full">
           <Link
@@ -37,7 +34,7 @@ export function Header({ color }: { color: string }) {
             href="/"
             onClick={() => setIsOpen(false)}
           >
-            Uthpala Biswas {pathname}
+            Uthpala Biswas
           </Link>
           <div
             className={cn(
