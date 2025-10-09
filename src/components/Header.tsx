@@ -14,6 +14,7 @@ export function Header({ color }: { color: string }) {
 
   return (
     <header
+      key={pathname}
       className={cn("animated-header-height fixed top-0 w-full z-10")}
       style={
         {
