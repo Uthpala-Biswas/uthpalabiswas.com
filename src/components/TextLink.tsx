@@ -8,7 +8,7 @@ export function TextLink(props: LinkProps) {
   return (
     <Link
       className={cn(
-        "group/link transition-all duration-300 text-sacred-800 underline decoration-sacred-500 hover:decoration-current pointer-coarse:decoration-current underline-offset-3",
+        "group/link transition-all duration-300 text-sacred-800 underline decoration-sacred-500 hover:decoration-current underline-offset-3 decoration-2",
         props.className,
       )}
       href={props.href}
