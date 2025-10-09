@@ -120,9 +120,3 @@ export const ICONS = {
   youtube: YoutubeIcon,
   instagram: InstagramIcon,
 };
-
-export function SocialIcon({ platform }: { platform: keyof typeof ICONS }) {
-  const icon = ICONS[platform];
-  if (!icon) return null;
-  return icon();
-}

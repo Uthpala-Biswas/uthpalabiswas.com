@@ -1306,11 +1306,13 @@ export type HEADER_COLOR_QUERYResult = {
   initialHeaderTextColor: Color | null;
 } | null;
 // Variable: SITE_SEETTINGS_QUERY
-// Query: *[_type == "siteSettings" && _id == "site-settings"][0]{  lotus,  socialLinksIntro,  socialLinks[]{    platform,    url  },  copyrightText,  credit,}
+// Query: *[_type == "siteSettings" && _id == "site-settings"][0]{  _id,  lotus,  socialLinksIntro,  socialLinks[]{    _key,    platform,    url  },  copyrightText,  credit,}
 export type SITE_SEETTINGS_QUERYResult = {
+  _id: string;
   lotus: boolean | null;
   socialLinksIntro: string | null;
   socialLinks: Array<{
+    _key: string;
     platform: "facebook" | "github" | "instagram" | "linkedin" | "soundcloud" | "twitter" | "youtube" | null;
     url: string | null;
   }> | null;
@@ -1367,7 +1369,7 @@ declare module "@sanity/client" {
     "*[_type == \"nowPage\" && _id == \"now-page\"][0]{\n    ...,\n    \"seo\": {\n      \"title\": coalesce(seo.title, title, \"\"),\n      \"description\": coalesce(seo.description,  \"\"),\n      \"image\": seo.image,\n      \"noIndex\": seo.noIndex == true\n    },\n    pageBuilder[]{\n      ...,\n      (_type == \"content\" || _type == \"splitImage\") => {\n        ...,\n        contentMatter[]{\n          ...,\n          _type == \"image\" => {\n            ...,\n            asset->{\n              _id,\n              metadata {\n                dimensions {\n                  width,\n                  aspectRatio\n                }\n              }\n            }\n          }\n        }\n      }\n    }\n  }": NOW_PAGE_QUERYResult;
     "*[_type == \"postsPageMetadata\"][0]{\n    ...,\n    \"seo\": {\n      \"title\": coalesce(seo.title, title, \"\"),\n      \"description\": coalesce(seo.description,  \"\"),\n      \"image\": seo.image,\n      \"noIndex\": seo.noIndex == true\n    },\n  }": POSTS_PAGE_METADATA_QUERYResult;
     "*[_type == \"homepage\"][0].pageBuilder[_type == \"hero\"][0]{\n  _type,\n  initialHeaderTextColor\n}": HEADER_COLOR_QUERYResult;
-    "*[_type == \"siteSettings\" && _id == \"site-settings\"][0]{\n  lotus,\n  socialLinksIntro,\n  socialLinks[]{\n    platform,\n    url\n  },\n  copyrightText,\n  credit,\n}": SITE_SEETTINGS_QUERYResult;
+    "*[_type == \"siteSettings\" && _id == \"site-settings\"][0]{\n  _id,\n  lotus,\n  socialLinksIntro,\n  socialLinks[]{\n    _key,\n    platform,\n    url\n  },\n  copyrightText,\n  credit,\n}": SITE_SEETTINGS_QUERYResult;
     "\n  *[_id == $id][0]{\n    title,\n    \"image\": mainImage.asset->{\n      _id,\n      metadata {\n        palette\n      }\n    }\n  }\n": OG_IMAGE_QUERYResult;
     "\n  *[_type == \"post\"]{\n    \"href\": \"/posts/\" + category->slug.current + \"/\" + slug.current,\n    _updatedAt,\n  }\n  +\n  [\n    *[_type == \"homepage\"][0]{ \"href\": \"/\", _updatedAt },\n    *[_type == \"aboutPage\"][0]{ \"href\": \"/about\", _updatedAt },\n    *[_type == \"nowPage\"][0]{ \"href\": \"/now\", _updatedAt },\n    *[_type == \"postsPageMetadata\"][0]{ \"href\": \"/posts\", _updatedAt }\n  ]\n": SITEMAP_QUERYResult;
   }

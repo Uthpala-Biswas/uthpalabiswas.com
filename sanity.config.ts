@@ -18,6 +18,7 @@ import { resolve } from "@/sanity/presentation/resolve";
 
 export default defineConfig({
   basePath: "/studio",
+  title: "Studio",
   projectId,
   dataset,
   // Add and edit the content schema in the './sanity/schemaTypes' folder
