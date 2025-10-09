@@ -41,7 +41,7 @@ export function Header({ color }: { color: string }) {
           </Link>
           <div
             className={cn(
-              "ml-4 hidden sm:flex items-center justify-center",
+              "ml-auto hidden sm:flex items-center justify-center",
               inter.className,
             )}
           >
@@ -49,12 +49,12 @@ export function Header({ color }: { color: string }) {
               <TextLink
                 key={i}
                 className={cn(
-                  "py-1 mx-1 text-center text-muted-foreground animated-header-text decoration-transparent underline-offset-4 decoration-2 duration-400",
+                  "px-2 mx-0 text-center text-muted-foreground animated-header-text decoration-transparent hover:decoration-current underline-offset-4 duration-400",
                   pathname === item.href && `font-black`,
                 )}
                 href={item.href}
                 style={{
-                  width: i == 0 ? 55 : i == 1 ? 57 : 45,
+                  width: i == 0 ? 63 : i == 1 ? 65 : 53,
                 }}
               >
                 {item.name}

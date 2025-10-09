@@ -228,9 +228,11 @@ export const HEADER_COLOR_QUERY =
 
 export const SITE_SEETTINGS_QUERY =
   defineQuery(`*[_type == "siteSettings" && _id == "site-settings"][0]{
+  _id,
   lotus,
   socialLinksIntro,
   socialLinks[]{
+    _key,
     platform,
     url
   },
