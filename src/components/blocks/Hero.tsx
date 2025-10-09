@@ -17,7 +17,7 @@ export function Hero({
   cta,
 }: HeroType) {
   return (
-    <section className="relative flex sm:items-center justify-center px-2 pt-30 pb-20 overflow-hidden -mt-[80px]">
+    <section className="relative flex sm:items-center justify-center px-2 pt-30 pb-50 overflow-hidden -mt-[80px] -mb-[150px] -z-1">
       {image && (
         <>
           (
@@ -65,7 +65,7 @@ export function Hero({
         ) : null}
         {cta ? BlogCTA(cta) : null}
       </div>
-      <div className="absolute z-1 w-full h-full bg-gradient-to-b from-transparent to-background bottom-0 pointer-events-none"></div>
+      <div className="absolute z-1 w-full h-full bg-gradient-to-b from-[15%] from-transparent via-background/60 to-background bottom-0 pointer-events-none"></div>
     </section>
   );
 }
