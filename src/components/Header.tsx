@@ -37,7 +37,7 @@ export function Header({ color }: { color: string }) {
             href="/"
             onClick={() => setIsOpen(false)}
           >
-            Uthpala Biswas {typeof pathname} {pathname}
+            Uthpala Biswas
           </Link>
           <div
             className={cn(
