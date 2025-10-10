@@ -17,12 +17,12 @@ export function SplitImage({
   orientation,
 }: SplitImageBlock) {
   return (
-    <div className="my-5 mx-3">
+    <div className="my-5 mx-3 relative z-1">
       <section
-        className="shadow-sm border-oldvest/30 flex group bg-sacred-100/40 flex-col sm:data-[orientation='imageLeft']:flex-row sm:data-[orientation='imageRight']:flex-row-reverse max-w-5xl gap-5 mx-auto p-5 text-right [&_*]:text-left"
+        className="shadow-sm border-oldvest/30 flex group bg-[#FCF7F2] flex-col sm:data-[orientation='imageLeft']:flex-row sm:data-[orientation='imageRight']:flex-row-reverse max-w-5xl gap-5 mx-auto p-5 text-right [&_*]:text-left"
         data-orientation={stegaClean(orientation) || "imageLeft"}
       >
-        <div className="grow-1 shrink-[0] sm:max-w-[40%] sm:min-w-[40%]">
+        <div className="grow-1 shrink-[0] sm:max-w-[40%] sm:min-w-[40%] border">
           {image ? (
             <Image
               className="w-full sm:group-data-[orientation='imageLeft']:float-right sm:group-data-[orientation='imageRight']:float-left sticky top-[50px]"

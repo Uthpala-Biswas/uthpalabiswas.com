@@ -91,6 +91,7 @@
   --sidebar-border: oklch(0.928 0.006 264.531);
   --sidebar-ring: oklch(0.707 0.022 261.325);
   --homepage-header-text-scrollstart-color: var(--muted-foreground);
+  --homepage-header-bg: var(--secondary);
 }
 
 .dark {
@@ -171,7 +172,7 @@
 
     @keyframes header-bg {
       0% {
-        background-color: transparent;
+        background-color: var(--homepage-header-bg);
       }
       10%,
       100% {
