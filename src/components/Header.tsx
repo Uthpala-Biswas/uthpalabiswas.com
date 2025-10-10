@@ -7,6 +7,7 @@ import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { inter, dancing_script } from "@/lib/fonts";
 import { TextLink } from "./TextLink";
+import { stegaClean } from "@sanity/client/stega";
 
 export function Header({ color }: { color: string }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,7 +19,7 @@ export function Header({ color }: { color: string }) {
       style={
         {
           "--homepage-header-text-scrollstart-color":
-            pathname === "/" ? color : "var(--muted-foreground)",
+            stegaClean(pathname) === "/" ? color : "var(--muted-foreground)",
         } as React.CSSProperties
       }
     >
@@ -27,7 +28,7 @@ export function Header({ color }: { color: string }) {
         style={
           {
             "--homepage-header-bg":
-              pathname === "/" ? "transparent" : "var(--secondary)",
+              stegaClean(pathname) === "/" ? "transparent" : "var(--secondary)",
           } as React.CSSProperties
         }
       >
